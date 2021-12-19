@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   Timer(Duration(seconds: 3),()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen())));
+   Timer(Duration(seconds: 1),()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen())));
     return Scaffold(
       backgroundColor: Colors.deepOrange,
       body: Center(
