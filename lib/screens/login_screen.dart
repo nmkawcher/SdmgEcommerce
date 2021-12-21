@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:sdmg_ecommerce/screens/home_screen.dart';
 import 'package:sdmg_ecommerce/screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -65,7 +66,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 20,
                 ),
-                ElevatedButton(onPressed: () {}, child: Text("Login")),
+                ElevatedButton(onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HomeScreen()));
+                }, child: Text("Login")),
                 SizedBox(
                   height: 30,
                 ),
