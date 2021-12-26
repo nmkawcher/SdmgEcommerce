@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sdmg_ecommerce/model/category_model.dart';
+
+import 'category_screen.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -96,21 +98,27 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             itemCount: categoryList.length,
               itemBuilder: (context,index){
-              return Column(
-                children: [
-                  Container(
-                    height: 70,
-                    width: 70,
-                    margin: EdgeInsets.only(left: 5),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: categoryList[index].color
+              return GestureDetector(
+                onTap: (){
+                  Navigator.push(context, 
+                  MaterialPageRoute(builder: (context)=>CategoryDetailsScreen(model: categoryList[index],)));
+                },
+                child: Column(
+                  children: [
+                    Container(
+                      height: 70,
+                      width: 70,
+                      margin: EdgeInsets.only(left: 5),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: categoryList[index].color
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 5,),
-                  Text(categoryList[index].categoryName,style: TextStyle(fontWeight:FontWeight.bold ),)
+                    SizedBox(height: 5,),
+                    Text(categoryList[index].categoryName,style: TextStyle(fontWeight:FontWeight.bold ),)
 
-                ],
+                  ],
+                ),
               );
               }
           ),
