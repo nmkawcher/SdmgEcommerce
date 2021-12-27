@@ -108,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       height: 70,
                       width: 70,
-                      margin: EdgeInsets.only(left: 5),
+                      margin: const EdgeInsets.only(left: 5),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: categoryList[index].color

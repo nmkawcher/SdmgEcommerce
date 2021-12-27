@@ -30,15 +30,16 @@ class CategoryDetailsScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    height: 100,
+                    height: 150,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(12),
                         topRight: Radius.circular(12),
                       ),
                       image: DecorationImage(
+
                         fit: BoxFit.cover,
-                        image:AssetImage(categoryList[index].image),
+                        image:AssetImage(categoryList[index].image,),
                       )
                     ),
 
@@ -48,7 +49,14 @@ class CategoryDetailsScreen extends StatelessWidget {
                       fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.bold
-                  ),),Text("\$85 doller/night",style: TextStyle(fontSize: 12,color: Colors.white,fontWeight: FontWeight.bold),)],)
+                  ),),Text("\$85 doller/night",style: TextStyle(fontSize: 12,color: Colors.white,fontWeight: FontWeight.bold),)],),
+                  SizedBox(height: 5,),
+                  Row(children: [
+                    Icon(Icons.star,color: Colors.orangeAccent,size: 15,),
+                    Text("4.5",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.white),),
+                   Spacer(),
+                    ElevatedButton(onPressed: (){},child: Text("Booking"),),
+                  ],)
                 ],
               ),
             );
